@@ -60,16 +60,34 @@ public class DogDogDaoImpl implements DogDaoInterface {
         Connection conn = Main.getConnection();
         PreparedStatement pstmt = conn.prepareStatement(sql);
         ResultSet rs = pstmt.executeQuery();
-        boolean hasDepartments = false;
+        boolean hasDogs = false;
         while (rs.next()) {
-            hasDepartments = true;
+            hasDogs = true;
             Dog dog = new Dog();
             dog.setId(Integer.parseInt(rs.getString(1)));
             dog.setName(rs.getString(2));
             dog.setCustomerID(Integer.parseInt(rs.getString(3)));
             System.out.println(dog.getId()+" "+ dog.getName()+dog.getCustomerID());
         }
-        if (!hasDepartments) {
+        if (!hasDogs) {
+            System.out.println("No dogs found.");
+        }
+    }
+
+    public void readAllDogsIdOnly() throws Exception{
+        String sql = "SELECT fldDogID FROM dbo.tblDogs";
+        Connection conn = Main.getConnection();
+        PreparedStatement pstmt = conn.prepareStatement(sql);
+        ResultSet rs = pstmt.executeQuery();
+        boolean hasDogs = false;
+        while (rs.next()) {
+            hasDogs = true;
+            Dog dog = new Dog();
+            dog.setId(Integer.parseInt(rs.getString(1)));
+            dog.setName(rs.getString(2));
+            System.out.printf("[%d] %s", dog.getId(), dog.getName());
+        }
+        if (!hasDogs) {
             System.out.println("No dogs found.");
         }
     }

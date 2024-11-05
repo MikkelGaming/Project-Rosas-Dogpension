@@ -18,4 +18,11 @@ public class Input {
         }
         return safeInput;
     }
+
+    public static void enterToContinue()
+    {
+        System.out.println("Press Enter to continue");
+        Scanner sc = new Scanner(System.in);
+        sc.nextLine();
+    }
 }

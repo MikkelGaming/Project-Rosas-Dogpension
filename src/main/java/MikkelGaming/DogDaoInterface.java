@@ -5,4 +5,5 @@ public interface DogDaoInterface {
     void readAllDogs() throws Exception;
     void createDog(Dog dog) throws Exception;
     void createFeedingSchedule(FeedingSchedule fs) throws Exception;
+    void readAllDogsIdOnly() throws Exception;
 }

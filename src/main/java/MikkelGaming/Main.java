@@ -2,8 +2,6 @@ package MikkelGaming;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.util.InputMismatchException;
-import java.util.Scanner;
 import java.sql.*;
 
 public class Main {
@@ -23,9 +21,12 @@ public class Main {
         return conn;
     }
 
-    public static void main(String args []) throws Exception{
+    public static void main(String[] args) throws Exception{
         System.out.println("start");
         conn = getConnection();
+
+        System.out.println("Welcome to the dog pension system");
+        Menus.mainMenu();
 
         DogDaoInterface dao = new DogDogDaoImpl();
 
@@ -33,19 +34,7 @@ public class Main {
 
         //Customer cus = new Customer("Karl", "2222221234", "22121010", "Karl@communism.net");
         //dao.createCustomer(cus);
-        Dog d = new Dog();
-        d.setName("Gary");
-        d.setCustomerID(1);
-        d.setBirthday(new Date(2012,7,22));
-        d.setInsurance("Many");
-        d.setExpectedStay(250);
-        d.setFeedingID(1);
-        d.setFleaTreatment("Yes");
-        d.setPreferredVetID(1);
-        d.setRace("Labrador");
-        d.setSpecialRequirements("none");
-        d.setVaccines("All of them");
-        d.setWeight(25);
+
         //dao.createDog(d);
 
         dao.readAllDogs();

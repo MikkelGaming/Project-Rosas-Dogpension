@@ -4,17 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31ddb072-6f11-4d92-b433-27fd6529565d" name="Changes" comment="Working connection to SQL database">
-      <change afterPath="$PROJECT_DIR$/src/main/java/MikkelGaming/CustomerDaoInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MikkelGaming/DogDogDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MikkelGaming/FeedingSchedule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MikkelGaming/Input.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MikkelGaming/Menus.java" afterDir="false" />
+    <list default="true" id="31ddb072-6f11-4d92-b433-27fd6529565d" name="Changes" comment="unversioned files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MikkelGaming/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MikkelGaming/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MikkelGaming/DaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MikkelGaming/CustomerDogDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MikkelGaming/DaoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MikkelGaming/DogDaoInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MikkelGaming/DogDaoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MikkelGaming/DogDaoInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MikkelGaming/DogDogDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MikkelGaming/DogDogDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MikkelGaming/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MikkelGaming/Input.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MikkelGaming/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MikkelGaming/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MikkelGaming/Menus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MikkelGaming/Menus.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +84,7 @@
       <workItem from="1730449730406" duration="4510000" />
       <workItem from="1730790271458" duration="9028000" />
       <workItem from="1730808241634" duration="1614000" />
-      <workItem from="1730832890636" duration="1924000" />
+      <workItem from="1730832890636" duration="3889000" />
     </task>
     <task id="LOCAL-00001" summary="Working connection to SQL database">
       <option name="closed" value="true" />
@@ -98,7 +94,23 @@
       <option name="project" value="LOCAL" />
       <updated>1730795914427</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="* Created basic layout for main menu and dog actions menu.&#10;* Made database connection a singleton in the Main class so that the same connection is shared instead of having 3-5 separate connections.&#10;* Made a basic input class for safe input.">
+      <option name="closed" value="true" />
+      <created>1730835235640</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1730835235640</updated>
+    </task>
+    <task id="LOCAL-00003" summary="unversioned files">
+      <option name="closed" value="true" />
+      <created>1730835261380</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1730835261380</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,7 +118,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Working connection to SQL database" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working connection to SQL database" />
+    <MESSAGE value="* Created basic layout for main menu and dog actions menu.&#10;* Made database connection a singleton in the Main class so that the same connection is shared instead of having 3-5 separate connections.&#10;* Made a basic input class for safe input." />
+    <MESSAGE value="unversioned files" />
+    <option name="LAST_COMMIT_MESSAGE" value="unversioned files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
