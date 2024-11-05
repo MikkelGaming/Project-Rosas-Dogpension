@@ -2,6 +2,7 @@ package MikkelGaming;
 
 public class Customer {
 
+    private int id;
     private String name;
     private String cprNum;
     private String phoneNum;
@@ -13,6 +14,14 @@ public class Customer {
         this.cprNum = cprNum;
         this.phoneNum = phoneNum;
         this.email = email;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
