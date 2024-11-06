@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31ddb072-6f11-4d92-b433-27fd6529565d" name="Changes" comment="Added a datasource.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/MikkelGaming/EventDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MikkelGaming/EventDaoInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MikkelGaming/DogDaoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MikkelGaming/DogDaoInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MikkelGaming/DogDogDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MikkelGaming/DogDogDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MikkelGaming/DogEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MikkelGaming/DogEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MikkelGaming/FeedingDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MikkelGaming/FeedingDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MikkelGaming/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MikkelGaming/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MikkelGaming/Menus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MikkelGaming/Menus.java" afterDir="false" />
-    </list>
+    <list default="true" id="31ddb072-6f11-4d92-b433-27fd6529565d" name="Changes" comment="* Infocard can now be printed.&#10;* Logs can be printed/read.&#10;&#10;next is a ton of comments." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -111,7 +101,7 @@
       <workItem from="1730808241634" duration="1614000" />
       <workItem from="1730832890636" duration="7254000" />
       <workItem from="1730886123752" duration="8264000" />
-      <workItem from="1730907211283" duration="6278000" />
+      <workItem from="1730907211283" duration="6599000" />
     </task>
     <task id="LOCAL-00001" summary="Working connection to SQL database">
       <option name="closed" value="true" />
@@ -161,7 +151,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730910612400</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="* Infocard can now be printed.&#10;* Logs can be printed/read.&#10;&#10;next is a ton of comments.">
+      <option name="closed" value="true" />
+      <created>1730913315805</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1730913315805</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,7 +172,8 @@
     <MESSAGE value="* Enter to continue added to Input class&#10;* Finished Show dog menu and functionality." />
     <MESSAGE value="* Finished Customer DAO Impl class/methods.&#10;* Made Output data formatted.&#10;* Dogs can be searched via name.&#10;* Dogs can be created from the menu.&#10;* Feeding schedule can be created from dog creation menu.&#10;* Customer can be created from dog creation menu.&#10;* Dog info can be updated.&#10;* Dogs can be deleted." />
     <MESSAGE value="Added a datasource." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a datasource." />
+    <MESSAGE value="* Infocard can now be printed.&#10;* Logs can be printed/read.&#10;&#10;next is a ton of comments." />
+    <option name="LAST_COMMIT_MESSAGE" value="* Infocard can now be printed.&#10;* Logs can be printed/read.&#10;&#10;next is a ton of comments." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
