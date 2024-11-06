@@ -14,6 +14,9 @@ public class FeedingSchedule {
         this.amount = amount;
     }
 
+    public FeedingSchedule()
+    {}
+
     public int getId() {
         return id;
     }

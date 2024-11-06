@@ -1,7 +1,5 @@
 package MikkelGaming;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.*;
 
 public class Main {
@@ -29,15 +27,6 @@ public class Main {
         Menus.mainMenu();
 
         DogDaoInterface dao = new DogDogDaoImpl();
-
-        dao.readAllDogs();
-
-        //Customer cus = new Customer("Karl", "2222221234", "22121010", "Karl@communism.net");
-        //dao.createCustomer(cus);
-
-        //dao.createDog(d);
-
-        dao.readAllDogs();
 
         System.out.println("slut");
     }

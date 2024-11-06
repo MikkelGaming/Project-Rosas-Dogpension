@@ -3,19 +3,19 @@ package MikkelGaming;
 import java.sql.Date;
 
 public class Dog {
-    public int id;
-    public int customerID;
-    public String name;
-    public Date birthday;
-    public String race;
-    public String specialRequirements;
-    public int preferredVetID;
-    public int weight;
-    public int expectedStay;
-    public int feedingID;
-    public String vaccines;
-    public String fleaTreatment;
-    public String insurance;
+    private int id;
+    private int customerID;
+    private String name;
+    private Date birthday;
+    private String race;
+    private String specialRequirements;
+    private int preferredVetID;
+    private int weight;
+    private int expectedStay;
+    private int feedingID;
+    private String vaccines;
+    private String fleaTreatment;
+    private String insurance;
 
     public int getId() {
         return id;
