@@ -44,7 +44,7 @@ public class FeedingDaoImpl implements FeedingDaoInterface {
             feedingSchedule.setFoodType(rs.getInt(3));
             feedingSchedule.setAmount(rs.getInt(4));
 
-            System.out.printf("Schedule: \nID: [%d] \nFrequency: %d\nFoodType: %d\nAmount: %d",
+            System.out.printf("-- Schedule -- \nID: [%d] \nFrequency: %d\nFoodType: %d\nAmount: %d\n",
                     feedingSchedule.getId(), feedingSchedule.getFrequency(), feedingSchedule.getFoodType(), feedingSchedule.getAmount());
 
             return true;

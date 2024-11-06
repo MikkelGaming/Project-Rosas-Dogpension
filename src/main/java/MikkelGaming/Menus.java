@@ -14,6 +14,7 @@ public class Menus {
     {
         System.out.println("1. Dog actions");
         System.out.println("2. Dog Event/Log actions");
+        System.out.println("3. Print Information card");
         System.out.println("4. Exit");
         switch (Input.safeInt())
         {
@@ -25,6 +26,10 @@ public class Menus {
             case 2:
                 System.out.println("Which dog event would you like to log?");
                 eventLogActions();
+                break;
+
+            case 3:
+                printInfoCard();
                 break;
 
             case 4:
@@ -39,6 +44,16 @@ public class Menus {
         }
 
         mainMenu();
+    }
+
+    private static void printInfoCard() throws Exception
+    {
+        DogDaoInterface dao = new DogDogDaoImpl();
+
+        System.out.println("Enter the ID of the dog: ");
+        dao.printInfoCard(Input.safeInt());
+
+        Input.enterToContinue();
     }
 
     private static void dogActions() throws Exception
@@ -261,6 +276,28 @@ public class Menus {
         return inputID;
     }
 
+    private static int inputDogID() throws Exception
+    {
+        DogDaoInterface dogDao = new DogDogDaoImpl();
+        dogDao.readAllDogsIdOnly();
+
+        int inputID = Input.safeInt();
+
+        if (inputID == 0)
+        {
+            mainMenu();
+        }
+
+        if (!dogDao.readDog(inputID, false))
+        {
+            System.out.println("Dog does not exist");
+            System.out.println("Please enter a valid dog ID or enter 0 to exit.");
+            return inputDogID();
+        }
+
+        return inputID;
+    }
+
     private static Date inputBirthday()
     {
         Date date;
@@ -350,7 +387,7 @@ public class Menus {
             case 2:
                 System.out.println("Here is a list of all dogs with ID:");
                 dao.readAllDogsIdOnly();
-                dao.readDog(Input.safeInt());
+                dao.readDog(Input.safeInt(), true);
                 break;
 
             case 3:
@@ -367,7 +404,7 @@ public class Menus {
         mainMenu();
     }
 
-    private static void eventLogActions()
+    private static void eventLogActions() throws Exception
     {
         System.out.println("1. Create log");
         System.out.println("2. Show all logs");
@@ -375,17 +412,60 @@ public class Menus {
         switch (Input.safeInt())
         {
             case 1:
-
+                createLog();
                 break;
 
             case 2:
-
+                showAllLogs();
                 break;
 
             case 3:
-
+                mainMenu();
                 break;
         }
+        Input.enterToContinue();
+        mainMenu();
+    }
+
+    private static void createLog() throws Exception
+    {
+        DogEvent event = new DogEvent();
+        EventDaoInterface dao = new EventDaoImpl();
+
+        System.out.println("What type of event are you logging: ");
+        dao.showAllEventTypes();
+
+        int eventType = Input.safeInt();
+        if (eventType >= 1 && eventType <= 5)
+        {
+            event.setEventType(eventType);
+        }
+        else {
+            System.out.println("Incorrect event type, setting type to 1.");
+            event.setEventType(1);
+        }
+
+        System.out.println("Describe the event (480 characters): ");
+        String desc = Input.string();
+        if (desc.length() > 480)
+        {
+            desc = desc.substring(0, 479);
+        }
+        event.setDescription(desc);
+
+        System.out.println("What dog is the event about (ID): ");
+        event.setDogID(inputDogID());
+
+        dao.createEvent(event);
+    }
+
+    private static void showAllLogs() throws Exception
+    {
+        EventDaoInterface dao = new EventDaoImpl();
+
+        dao.showAllEventTypes();
+
+        dao.showAllLogs();
     }
 
     private static int createCustomer() throws Exception

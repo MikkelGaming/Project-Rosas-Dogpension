@@ -92,7 +92,7 @@ public class DogDogDaoImpl implements DogDaoInterface {
     }
 
     @Override
-    public boolean readDog(int id) throws Exception{
+    public boolean readDog(int id, boolean printDetails) throws Exception{
 
         FeedingDaoInterface feedingDao = new FeedingDaoImpl();
         VetDaoInterface vetDao = new VetDaoImpl();
@@ -118,11 +118,14 @@ public class DogDogDaoImpl implements DogDaoInterface {
             dog.setFleaTreatment(rs.getString(12));
             dog.setInsurance(rs.getString(13));
 
-            System.out.printf("---- [%d] %s ----\nCustomerID: %d\nBirthday: %s\nRace: %s\n-- Special Requirements --\n%s\n-- Veterinarian --\n%s\n-- Weight --\n%d" +
-                            "\n-- Expected Stay --\n%d hours\n-- Feeding Schedule --\n%s\n-- Vaccines --\n%s\n-- Flea treatment --\n%s\n -- Insurance --\n%s\n",
-                    dog.getId(), dog.getName(), dog.getCustomerID(), dog.getBirthday().toString(), dog.getRace(), dog.getSpecialRequirements(),
-                    vetDao.printVet(dog.getPreferredVetID()), dog.getWeight(), dog.getExpectedStay(), feedingDao.printSchedule(dog.getFeedingID()), dog.getVaccines(),
-                    dog.getFleaTreatment(), dog.getInsurance());
+            if (printDetails)
+            {
+                System.out.printf("---- [%d] %s ----\nCustomerID: %d\nBirthday: %s\nRace: %s\n-- Special Requirements --\n%s\n-- Veterinarian --\n%s\n-- Weight --\n%d" +
+                                "\n-- Expected Stay --\n%d hours\n-- Feeding Schedule --\n%s\n-- Vaccines --\n%s\n-- Flea treatment --\n%s\n -- Insurance --\n%s\n",
+                        dog.getId(), dog.getName(), dog.getCustomerID(), dog.getBirthday().toString(), dog.getRace(), dog.getSpecialRequirements(),
+                        vetDao.printVet(dog.getPreferredVetID()), dog.getWeight(), dog.getExpectedStay(), feedingDao.printSchedule(dog.getFeedingID()), dog.getVaccines(),
+                        dog.getFleaTreatment(), dog.getInsurance());
+            }
 
             return true;
         } else {
@@ -184,6 +187,30 @@ public class DogDogDaoImpl implements DogDaoInterface {
         if (affectedRows > 0) {
             System.out.println("Dog was deleted successfully.");
         } else {
+            System.out.println("Failed to locate the dog.");
+        }
+    }
+
+    @Override
+    public void printInfoCard(int id) throws Exception
+    {
+        String sql = "SELECT fldName, fldExpectedStay, fldFeedingID FROM dbo.tblDogs WHERE fldDogID = ?";
+        Connection conn = Main.getConnection();
+        PreparedStatement pstmt = conn.prepareStatement(sql);
+        pstmt.setInt(1, id);
+        ResultSet rs = pstmt.executeQuery();
+
+        FeedingDaoInterface feedingDao = new FeedingDaoImpl();
+
+        System.out.println("--- Dog Information card ---");
+        boolean hasDog = false;
+        while (rs.next()) {
+            hasDog = true;
+
+            System.out.printf("Name: %s\nExpected Stay: %d hours\n", rs.getString(1), rs.getInt(2));
+            feedingDao.readSchedule(rs.getInt(3));
+        }
+        if (!hasDog) {
             System.out.println("Failed to locate the dog.");
         }
     }

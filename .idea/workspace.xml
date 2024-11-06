@@ -4,21 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31ddb072-6f11-4d92-b433-27fd6529565d" name="Changes" comment="* Finished Customer DAO Impl class/methods.&#10;* Made Output data formatted.&#10;* Dogs can be searched via name.&#10;* Dogs can be created from the menu.">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MikkelGaming/FeedingDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MikkelGaming/FeedingDaoInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MikkelGaming/VetDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MikkelGaming/VetDaoInterface.java" afterDir="false" />
+    <list default="true" id="31ddb072-6f11-4d92-b433-27fd6529565d" name="Changes" comment="Added a datasource.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/MikkelGaming/EventDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MikkelGaming/EventDaoInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MikkelGaming/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MikkelGaming/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MikkelGaming/CustomerDaoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MikkelGaming/CustomerDaoInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MikkelGaming/CustomerDogDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MikkelGaming/CustomerDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MikkelGaming/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MikkelGaming/Dog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MikkelGaming/DogDaoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MikkelGaming/DogDaoInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MikkelGaming/DogDogDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MikkelGaming/DogDogDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MikkelGaming/FeedingSchedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MikkelGaming/FeedingSchedule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MikkelGaming/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MikkelGaming/Input.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MikkelGaming/DogEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MikkelGaming/DogEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MikkelGaming/FeedingDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MikkelGaming/FeedingDaoImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MikkelGaming/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MikkelGaming/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MikkelGaming/Menus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MikkelGaming/Menus.java" afterDir="false" />
     </list>
@@ -31,6 +24,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -117,7 +111,7 @@
       <workItem from="1730808241634" duration="1614000" />
       <workItem from="1730832890636" duration="7254000" />
       <workItem from="1730886123752" duration="8264000" />
-      <workItem from="1730907211283" duration="3116000" />
+      <workItem from="1730907211283" duration="6278000" />
     </task>
     <task id="LOCAL-00001" summary="Working connection to SQL database">
       <option name="closed" value="true" />
@@ -151,7 +145,23 @@
       <option name="project" value="LOCAL" />
       <updated>1730837143371</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="* Finished Customer DAO Impl class/methods.&#10;* Made Output data formatted.&#10;* Dogs can be searched via name.&#10;* Dogs can be created from the menu.&#10;* Feeding schedule can be created from dog creation menu.&#10;* Customer can be created from dog creation menu.&#10;* Dog info can be updated.&#10;* Dogs can be deleted.">
+      <option name="closed" value="true" />
+      <created>1730910594139</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1730910594139</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added a datasource.">
+      <option name="closed" value="true" />
+      <created>1730910612400</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1730910612400</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,7 +172,9 @@
     <MESSAGE value="* Created basic layout for main menu and dog actions menu.&#10;* Made database connection a singleton in the Main class so that the same connection is shared instead of having 3-5 separate connections.&#10;* Made a basic input class for safe input." />
     <MESSAGE value="unversioned files" />
     <MESSAGE value="* Enter to continue added to Input class&#10;* Finished Show dog menu and functionality." />
-    <option name="LAST_COMMIT_MESSAGE" value="* Enter to continue added to Input class&#10;* Finished Show dog menu and functionality." />
+    <MESSAGE value="* Finished Customer DAO Impl class/methods.&#10;* Made Output data formatted.&#10;* Dogs can be searched via name.&#10;* Dogs can be created from the menu.&#10;* Feeding schedule can be created from dog creation menu.&#10;* Customer can be created from dog creation menu.&#10;* Dog info can be updated.&#10;* Dogs can be deleted." />
+    <MESSAGE value="Added a datasource." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a datasource." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

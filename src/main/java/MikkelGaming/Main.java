@@ -26,8 +26,6 @@ public class Main {
         System.out.println("Welcome to the dog pension system");
         Menus.mainMenu();
 
-        DogDaoInterface dao = new DogDogDaoImpl();
-
         System.out.println("slut");
     }
 }
