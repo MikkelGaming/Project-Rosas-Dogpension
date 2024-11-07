@@ -4,6 +4,11 @@ import java.sql.*;
 
 public class DogDogDaoImpl implements DogDaoInterface {
 
+    /**
+     * Creates a new dog in the database.
+     * @param dog
+     * @throws Exception
+     */
     @Override
     public void createDog(Dog dog) throws Exception {
         String sql = "INSERT INTO dbo.tblDogs VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -29,6 +34,11 @@ public class DogDogDaoImpl implements DogDaoInterface {
         }
     }
 
+    /**
+     * Updates a dog in the database.
+     * @param dog
+     * @throws Exception
+     */
     @Override
     public void updateDog(Dog dog) throws Exception {
         String sql = "UPDATE dbo.tblDogs SET " +
@@ -67,6 +77,12 @@ public class DogDogDaoImpl implements DogDaoInterface {
         }
     }
 
+    /**
+     * Prints dogs from the database that matches an input name.
+     * @param name
+     * @return true if the dog exists, false if not.
+     * @throws Exception
+     */
     @Override
     public boolean readDog(String name) throws Exception{
         String sql = "SELECT fldDogID, fldCustomerID, fldName FROM dbo.tblDogs WHERE fldName = ?";
@@ -91,6 +107,13 @@ public class DogDogDaoImpl implements DogDaoInterface {
         }
     }
 
+    /**
+     * Reads dog by id from the database. returns true if it exists.
+     * @param id
+     * @param printDetails true if it should print dog details to console, false if not.
+     * @return
+     * @throws Exception
+     */
     @Override
     public boolean readDog(int id, boolean printDetails) throws Exception{
 
@@ -134,6 +157,11 @@ public class DogDogDaoImpl implements DogDaoInterface {
         }
     }
 
+    /**
+     * Prints all dogs to the console.
+     * Only their ID, name and the customer ID.
+     * @throws Exception
+     */
     @Override
     public void readAllDogs() throws Exception{
         String sql = "SELECT fldDogID, fldName, fldCustomerID FROM dbo.tblDogs";
@@ -159,6 +187,11 @@ public class DogDogDaoImpl implements DogDaoInterface {
         }
     }
 
+    /**
+     * Prints all dogs to the console.
+     * Only their ID and name.
+     * @throws Exception
+     */
     public void readAllDogsIdOnly() throws Exception{
         String sql = "SELECT fldDogID, fldName FROM dbo.tblDogs";
         Connection conn = Main.getConnection();
@@ -177,6 +210,11 @@ public class DogDogDaoImpl implements DogDaoInterface {
         }
     }
 
+    /**
+     * Deletes a dog by id from the database.
+     * @param id
+     * @throws Exception
+     */
     @Override
     public void deleteDog(int id) throws Exception{
         String sql = "DELETE FROM dbo.tblDogs WHERE fldDogID = ?";
@@ -191,6 +229,11 @@ public class DogDogDaoImpl implements DogDaoInterface {
         }
     }
 
+    /**
+     * Gets infocard data from the database.
+     * @param id
+     * @throws Exception
+     */
     @Override
     public void printInfoCard(int id) throws Exception
     {

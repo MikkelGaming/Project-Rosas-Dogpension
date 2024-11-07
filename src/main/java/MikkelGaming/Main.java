@@ -9,6 +9,11 @@ public class Main {
     private static final String PASSWORD = "entotrefirefemseks"; // replace with your password
     private static Connection conn;
 
+    /**
+     * Establishes connection to the Database.
+     * @return
+     * @throws Exception
+     */
     public static Connection getConnection() throws Exception {
         if (conn == null) {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
@@ -19,6 +24,11 @@ public class Main {
         return conn;
     }
 
+    /**
+     * Handles the welcome and general start of the system.
+     * @param args
+     * @throws Exception
+     */
     public static void main(String[] args) throws Exception{
         System.out.println("start");
         conn = getConnection();

@@ -6,6 +6,10 @@ import java.sql.ResultSet;
 
 public class EventDaoImpl implements EventDaoInterface{
 
+    /**
+     * Prints all logs from the database.
+     * @throws Exception
+     */
     @Override
     public void showAllLogs() throws Exception {
         String sql = "SELECT * FROM dbo.tblEvents";
@@ -25,6 +29,10 @@ public class EventDaoImpl implements EventDaoInterface{
         }
     }
 
+    /**
+     * Prints the event types from the database.
+     * @throws Exception
+     */
     @Override
     public void showAllEventTypes() throws Exception {
         String sql = "SELECT * FROM dbo.tblEventTypes";
@@ -44,6 +52,11 @@ public class EventDaoImpl implements EventDaoInterface{
         }
     }
 
+    /**
+     * Creates a new event/log in the database.
+     * @param event the new event/log
+     * @throws Exception
+     */
     @Override
     public void createEvent(DogEvent event) throws Exception {
         String sql = "INSERT INTO dbo.tblEvents VALUES (?, ?, ?)";

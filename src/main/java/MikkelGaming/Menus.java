@@ -4,12 +4,20 @@ import java.sql.Date;
 
 public class Menus {
 
+    /**
+     * Starts the main menu options
+     * @throws Exception
+     */
     public static void mainMenu() throws Exception
     {
         System.out.println("Please select an option:");
         mainMenuOptions();
     }
 
+    /**
+     * The main menu options, shows options and takes input for what the user wants to do.
+     * @throws Exception
+     */
     private static void mainMenuOptions() throws Exception
     {
         System.out.println("1. Dog actions");
@@ -46,6 +54,10 @@ public class Menus {
         mainMenu();
     }
 
+    /**
+     * Prints the info required by the infocard.
+     * @throws Exception
+     */
     private static void printInfoCard() throws Exception
     {
         DogDaoInterface dao = new DogDogDaoImpl();
@@ -56,6 +68,11 @@ public class Menus {
         Input.enterToContinue();
     }
 
+    /**
+     * Allows the user all CRUD actions.
+     * Customers and Schedules are also created here.
+     * @throws Exception
+     */
     private static void dogActions() throws Exception
     {
         System.out.println("1. Create Dog");
@@ -96,6 +113,10 @@ public class Menus {
         }
     }
 
+    /**
+     * Deletes the dog with the ID that is entered.
+     * @throws Exception
+     */
     private static void deleteDogMenu() throws Exception
     {
         DogDaoInterface dao = new DogDogDaoImpl();
@@ -104,6 +125,11 @@ public class Menus {
         dao.deleteDog(Input.safeInt());
     }
 
+    /**
+     * Allows the User to update the variables of a dog.
+     * Also allows the creation of a new customer or schedule.
+     * @throws Exception
+     */
     private static void updateDogMenu() throws Exception
     {
         DogDaoInterface dogDao = new DogDogDaoImpl();
@@ -182,6 +208,10 @@ public class Menus {
         dogDao.updateDog(d);
     }
 
+    /**
+     * Handles the creation of new dogs, customers and schedules.
+     * @throws Exception
+     */
     private static void createDogMenu() throws Exception
     {
         DogDaoInterface dogDao = new DogDogDaoImpl();
@@ -255,6 +285,12 @@ public class Menus {
         dogDao.createDog(d);
     }
 
+    /**
+     * Checks if the ID provided by the user is the ID of an existing Customer.
+     * If not it allows the creation of a new customer.
+     * @return the id of a existing customer or a new one.
+     * @throws Exception
+     */
     private static int inputCustomerID() throws Exception
     {
         CustomerDaoInterface dao = new CustomerDaoImpl();
@@ -276,6 +312,12 @@ public class Menus {
         return inputID;
     }
 
+    /**
+     * Checks the input of the user for the dog ID.
+     * if it does not yet exist it allows for new input or creating a new dog.
+     * @return ID of an existing dog or the newly created one.
+     * @throws Exception
+     */
     private static int inputDogID() throws Exception
     {
         DogDaoInterface dogDao = new DogDogDaoImpl();
@@ -298,6 +340,11 @@ public class Menus {
         return inputID;
     }
 
+    /**
+     * Checks the Input for the dog birthday.
+     * Makes sure it is a correct date/format.
+     * @return Date in correct format.
+     */
     private static Date inputBirthday()
     {
         Date date;
@@ -322,6 +369,12 @@ public class Menus {
         return date;
     }
 
+    /**
+     * Checks for correct schedule ID input.
+     * If input is an incorrect schedule ID it allows for another input or the creation of a new schedule.
+     * @return int ID of existing schedule.
+     * @throws Exception
+     */
     private static int inputScheduleID() throws Exception
     {
         FeedingDaoInterface dao = new FeedingDaoImpl();
@@ -344,6 +397,11 @@ public class Menus {
         return inputID;
     }
 
+    /**
+     * Handles of the creation of schedule.
+     * @return int ID of the new schedule.
+     * @throws Exception
+     */
     private static int createSchedule() throws Exception
     {
         FeedingDaoInterface dao = new FeedingDaoImpl();
@@ -372,6 +430,10 @@ public class Menus {
         return  dao.createSchedule(schedule);
     }
 
+    /**
+     * Handles the Dog actions menu.
+     * @throws Exception
+     */
     private static void showDogMenu() throws Exception
     {
         System.out.println("1. Show all dogs");
@@ -404,6 +466,10 @@ public class Menus {
         mainMenu();
     }
 
+    /**
+     * Handles the menu for logging actions.
+     * @throws Exception
+     */
     private static void eventLogActions() throws Exception
     {
         System.out.println("1. Create log");
@@ -427,6 +493,10 @@ public class Menus {
         mainMenu();
     }
 
+    /**
+     * Handles creation of a new log.
+     * @throws Exception
+     */
     private static void createLog() throws Exception
     {
         DogEvent event = new DogEvent();
@@ -459,6 +529,10 @@ public class Menus {
         dao.createEvent(event);
     }
 
+    /**
+     * Shows all existing logs.
+     * @throws Exception
+     */
     private static void showAllLogs() throws Exception
     {
         EventDaoInterface dao = new EventDaoImpl();
@@ -468,6 +542,11 @@ public class Menus {
         dao.showAllLogs();
     }
 
+    /**
+     * Handles the creation of a new customer.
+     * @return int ID of newly created customer.
+     * @throws Exception
+     */
     private static int createCustomer() throws Exception
     {
         CustomerDaoInterface dao = new CustomerDaoImpl();

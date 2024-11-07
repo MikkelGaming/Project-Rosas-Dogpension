@@ -4,6 +4,12 @@ import java.sql.*;
 
 public class CustomerDaoImpl implements CustomerDaoInterface {
 
+    /**
+     * Creates a customer in the database.
+     * @param cus
+     * @return ID of the new customer.
+     * @throws Exception
+     */
     @Override
     public int createCustomer(Customer cus) throws Exception {
         String sql = "INSERT INTO dbo.tblCustomers VALUES (?, ?, ?, ?)";
@@ -37,6 +43,12 @@ public class CustomerDaoImpl implements CustomerDaoInterface {
         }
     }
 
+    /**
+     * Reads customer from the database by ID.
+     * @param id
+     * @return boolean if the id represents an existing customer.
+     * @throws Exception
+     */
     @Override
     public boolean readCustomer(int id) throws Exception{
         String sql = "SELECT * FROM dbo.tblCustomers WHERE fldCustomerID = ?";
@@ -62,6 +74,10 @@ public class CustomerDaoImpl implements CustomerDaoInterface {
         }
     }
 
+    /**
+     * Reads all customers from the database.
+     * @throws Exception
+     */
     @Override
     public void readAllCustomers() throws Exception{
         String sql = "SELECT * FROM dbo.tblCustomers";

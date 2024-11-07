@@ -6,6 +6,12 @@ import java.sql.ResultSet;
 
 public class VetDaoImpl implements VetDaoInterface{
 
+    /**
+     * Reads and prints a vet from the database by the ID.
+     * @param id
+     * @return true if the vet exists.
+     * @throws Exception
+     */
     @Override
     public boolean readVet(int id) throws Exception {
         String sql = "SELECT * FROM dbo.tblVeterinarians WHERE fldVetID = ?";
@@ -23,11 +29,17 @@ public class VetDaoImpl implements VetDaoInterface{
 
             return true;
         } else {
-            System.out.println("No Schedule found with ID: " + id);
+            System.out.println("No Vet found with ID: " + id);
             return false;
         }
     }
 
+    /**
+     * Reads vet by ID from the database and returns the details/data.
+     * @param id
+     * @return String containing the vet data.
+     * @throws Exception
+     */
     @Override
     public String printVet(int id) throws Exception {
         String sql = "SELECT * FROM dbo.tblVeterinarians WHERE fldVetID = ?";
@@ -48,6 +60,10 @@ public class VetDaoImpl implements VetDaoInterface{
         }
     }
 
+    /**
+     * Prints all vets to the console from the database.
+     * @throws Exception
+     */
     @Override
     public void readAllVets() throws Exception {
         String sql = "SELECT * FROM dbo.tblVeterinarians";

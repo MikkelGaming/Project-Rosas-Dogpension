@@ -4,6 +4,10 @@ import java.sql.*;
 
 public class FeedingDaoImpl implements FeedingDaoInterface {
 
+    /**
+     * Prints all food types from the database.
+     * @throws Exception
+     */
     @Override
     public void readFoodTypes() throws Exception
     {
@@ -30,6 +34,12 @@ public class FeedingDaoImpl implements FeedingDaoInterface {
         }
     }
 
+    /**
+     * Reads and prints a schedule from the database, based on the ID.
+     * @param id
+     * @return if the schedule exists or not.
+     * @throws Exception
+     */
     @Override
     public boolean readSchedule(int id) throws Exception {
         String sql = "SELECT * FROM dbo.tblFeeding WHERE fldFeedingID = ?";
@@ -54,6 +64,12 @@ public class FeedingDaoImpl implements FeedingDaoInterface {
         }
     }
 
+    /**
+     * Returns a string containing the read schedule from the database.
+     * @param id
+     * @return date of the schedule.
+     * @throws Exception
+     */
     @Override
     public String printSchedule(int id) throws Exception {
         String sql = "SELECT * FROM dbo.tblFeeding WHERE fldFeedingID = ?";
@@ -76,6 +92,10 @@ public class FeedingDaoImpl implements FeedingDaoInterface {
         }
     }
 
+    /**
+     * Reads and prints all schedules from the database.
+     * @throws Exception
+     */
     @Override
     public void readAllSchedules() throws Exception {
         String sql = "SELECT * FROM dbo.tblFeeding";
@@ -96,6 +116,12 @@ public class FeedingDaoImpl implements FeedingDaoInterface {
         }
     }
 
+    /**
+     * Creates a new schedule from a FeedingSchedule object.
+     * @param schedule
+     * @return return the ID of the new schedule.
+     * @throws Exception
+     */
     @Override
     public int createSchedule(FeedingSchedule schedule) throws Exception
     {
